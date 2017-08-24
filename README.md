@@ -15,7 +15,7 @@ Installation:
 - Make sure MySQL is running on port 3306.
 - Create database `walletjs`
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jeka-kiselyov/dimeshift)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sofi-psong/path)
 
 or install from CLI:
 
