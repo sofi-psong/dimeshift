@@ -16,6 +16,8 @@ if (config.database.use_env_variable) {
   options.host = config.database.host || null;
   options.dialect = config.database.dialect || null;
   options.storage = config.database.storage || null;
+  options.port = config.database.port || 3306;
+  
   if (options.storage)
     options.storage = path.join(rfr.root, options.storage);
 
