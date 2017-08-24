@@ -1,21 +1,19 @@
-# DimeShift - easiest way to track your expenses. Online. Open-source. Free
+# SoFi Path - easiest way to track your expenses. Online. Open-source. Free
 * node.js
 * npm
 * Front-end: jQuery, Bootstrap, Backbone.js with JSmart template engine.
 * Back-end: Sequelize, SQLite database by default, easy to switch to MySQL or Postgree for production.
 
-Demo:
+Reference:
 ----
  [DimeShift](http://dimeshift.com/)
 
-Desktop Application:
-----
-
- [DimeShift Desktop](https://github.com/jeka-kiselyov/dimeshift-desktop). Cross platform desktop app built on [Electron](http://electron.atom.io/)
- 
 
 Installation:
 ----
+
+- Make sure MySQL is running on port 3306.
+- Create database `walletjs`
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jeka-kiselyov/dimeshift)
 
@@ -38,11 +36,6 @@ npm start
 ```
 Open [localhost:8080](http://localhost:8080) in your browser.
 
-Documentation:
-----
-
-[API](http://docs.dimeshift.apiary.io/)
-
 
 Screenshots:
 ----
@@ -53,11 +46,3 @@ Screenshots:
 ![Dimeshift goals](https://raw.githubusercontent.com/jeka-kiselyov/dimeshift/master/public/images/homepage/screenshots/goal.jpg?1mar16)
 
 ![Dimeshift i18n](https://raw.githubusercontent.com/jeka-kiselyov/dimeshift/master/public/images/homepage/screenshots/i18n.jpg?1mar16)
-
-License
-----
-GNU Affero GPL
-
-**Free Software, Hell Yeah!**
-
-From Slavyansk, Ukraine. With Love
