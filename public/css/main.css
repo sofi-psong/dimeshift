@@ -13,6 +13,35 @@
   bottom: 4px;
 }
 
-
+/*reason module*/
+.heading {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.reason-module {
+  width: 49%;
+  display: inline-block;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 10px;
+  height: 160px;
+  border-radius: 7px;
+}
+.reason-heading {
+	font-size: 17px;
+}
+.reason-icon {
+	width: auto;
+	height: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.progress {
+	margin-bottom: 5px;
+}
+.points {
+	color: #8a8a8a;
+}
 
 

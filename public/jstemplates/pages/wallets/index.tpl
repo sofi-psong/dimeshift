@@ -45,16 +45,52 @@
 		{/if}
 		</div>	
 	{/if} -->
-	<div class="home-module">
+	<div class="reason">
 		<h2 class="heading">What's affecting your score</h2>
-		<div class="">
-			<h3>Credit Score</h3>
+
+		<div class="reason-module">
+			<img class="reason-icon" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825112936/icon-credit-card-blue-1.png" alt="income">
+			<h3 class="reason-heading">Credit Score</h3>
 			<div class="progress">
-			  <div class="progress-bar" role="progressbar" aria-valuenow="70"
-			  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+			  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
+			  aria-valuemin="0" aria-valuemax="100" style="width:20%">
 			    <span class="sr-only">70% Complete</span>
 			  </div>
 			</div>
+			<p class="points">24 out of 50 points</p>
+		</div>
+		<div class="reason-module">
+			<img class="reason-icon" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825112901/icon-money.png" alt="income" id="income">
+			<h3 class="reason-heading">Income</h3>
+			<div class="progress">
+			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
+			  aria-valuemin="0" aria-valuemax="100" style="width:45%">
+			    <span class="sr-only">70% Complete</span>
+			  </div>
+			</div>
+			<p class="points">15 out of 20 points</p>
+		</div>
+		<div class="reason-module">
+			<img class="reason-icon" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825113313/icon-chart-rebalancing.png" alt="income">
+			<h3 class="reason-heading">Assets</h3>
+			<div class="progress">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10"
+			  aria-valuemin="0" aria-valuemax="100" style="width:10%">
+			    <span class="sr-only">70% Complete</span>
+			  </div>
+			</div>
+			<p class="points">5 out of 20 points</p>
+		</div>
+		<div class="reason-module">
+			<img class="reason-icon" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825112904/icon-hand-percentage-blue.png" alt="income">
+			<h3 class="reason-heading">Lorem</h3>
+			<div class="progress">
+			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90"
+			  aria-valuemin="0" aria-valuemax="100" style="width:90%">
+			    <span class="sr-only">70% Complete</span>
+			  </div>
+			</div>
+			<p class="points">6 out of 10 points</p>
 		</div>
 	</div>
 
