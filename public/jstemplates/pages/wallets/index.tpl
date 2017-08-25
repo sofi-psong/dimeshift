@@ -1,50 +1,7 @@
 <div class="row">
 <div class="col-xs-12 col-md-9">
 
-<!-- 	{if $items|count == 0}
-		{if $status|default:'active' == 'active'}
-			{if $origin|default:'mine' == 'shared'}
-			<div class="alert alert-warning" role="alert">{tp}You don't have access to other users' wallets{/tp}</div>	
-			{else}
-			<div class="alert alert-warning" role="alert">{tp}You have no wallets{/tp} <a href="{$settings->site_path}/wallets/add" class="btn btn-primary btn-xs" id="add_wallet_button">{tp}Add{/tp}</a></div>
-			{/if}
-		{else}
-			<div class="alert alert-warning" role="alert">{tp}You have no hidden wallets{/tp}</div>			
-		{/if}
-	{else}
-		<div class="list-group wallet_item" id="wallet_items">
-		{foreach from=$items item=i}
-			<a href="{$settings->site_path}/wallets/{$i->id}" class="list-group-item item" data-id="{$i->id}" 
-				{if $i->origin|default:'mine' == 'shared'}style="background: #eee"{/if}>
-			    
-				
-				<div class="pull-right {if $i->total >= 0}text-success{else}text-danger{/if} 
-				transaction_amount"><strong>{if $i->total < 0}-{/if}{if $i->currency == 'USD'}${/if}{$i->total|rational}.<sup>{$i->total|decimal}</sup>{if $i->currency != 'USD'} {$i->currency}{/if}</strong></div>
-
-				<div class="item_buttons hideme wallet_buttons">
-				{if $i->origin|default:'mine' == 'mine'}
-					<button class="btn btn-default btn-xs item_button_remove"><span class="glyphicon glyphicon-trash"></span> {if $i->status|default:'active' == 'active'}{tp}Hide{/tp}{else}{tp}Remove{/tp}{/if}</button>
-					{if $i->status|default:'active' == 'active'}
-					<button class="btn btn-default btn-xs item_button_edit"><span class="glyphicon glyphicon-pencil"></span> {tp}Edit{/tp}</button>
-					<button class="btn btn-default btn-xs item_button_accesses"><span class="glyphicon glyphicon-user"></span> {tp}Manage Accesses{/tp}</button>
-					{/if}
-					{if $i->status|default:'active' == 'hidden'}
-					<button class="btn btn-default btn-xs item_button_restore"><span class="glyphicon glyphicon-repeat"></span> {tp}Restore{/tp}</button>
-					{/if}
-				{/if}
-				</div>
-				<h4 class="list-group-item-heading">
-				{if $i->origin|default:'mine' == 'shared'}<span class="glyphicon glyphicon-share-alt" title="{tp}This wallet is shared with you by another user{/tp}"></span> {/if}
-				{$i->name|escape:'html'}</h4>
-
-			</a>
-		{/foreach}
-
-		{if $status|default:'active' == 'active'}
-			<div class="list-group-item list-group-item-info"><a href="{$settings->site_path}/wallets/add" class="btn btn-primary" id="add_wallet_button">{tp}Add{/tp}</a></div>
-		{/if}
-		</div>	
-	{/if} -->
+	<div id="chart"></div>
 	<div class="reason">
 		<h2 class="heading">What's affecting your score</h2>
 
@@ -93,6 +50,37 @@
 			<p class="points">6 out of 10 points</p>
 		</div>
 	</div>
+
+
+
+
+<script>
+var chart = c3.generate({
+    data: {
+        columns: [
+            ['data', 91.4]
+        ],
+        type: 'gauge',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    },
+    gauge: {
+    },
+    color: {
+        pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+        threshold: {
+            values: [30, 60, 90, 100]
+        }
+    },
+    size: {
+        height: 180
+    }
+});
+</script>
+
+
+
 
 </div>
 <div class="col-xs-12 col-md-3">
