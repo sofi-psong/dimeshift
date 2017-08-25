@@ -6,7 +6,7 @@
 		var chart = c3.generate({
 		    data: {
 		        columns: [
-		            ['score', 7.4]
+		            ['score', 6.2]
 		        ],
 		        type: 'gauge',
 		        onclick: function (d, i) { console.log("onclick", d, i); },
@@ -19,7 +19,7 @@
 					max: 10,
 					label: {
 	    		format: function (value, ratio) {
-	      	return value + '!';
+	      	return value;
 	    	}
 	  }
 		    },
@@ -214,6 +214,58 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="credit-score">
+			<div class="credit-score-module">
+				<h1>715<span>Average</span></h1>
+				<div id="chart2"></div>
+
+				<script>			
+				var chart2 = c3.generate({
+						bindto: '#chart2',
+						data: {
+						        x: 'x',
+						        columns: [
+						            ['x', '2017-07-31', '2017-08-07', '2017-08-14', '2017-08-21'],
+						            ['Credit Score', 708, 708, 718, 718]
+						        ]
+						    },
+						    axis: {
+						        x: {
+						            type: 'timeseries',
+						            tick: {
+						                values: ['2017-07-31', '2017-08-07', '2017-08-14', '2017-08-21']
+						            }
+						        },
+						        y: {
+						            type: 'number',
+						            tick: {
+						                values: ['705', '708', '711', '714', '717', '720']
+						            }
+						        }
+						    }
+
+				});
+				</script>
+				<img src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825151800/info-button.png" class="info-icon">
+				<p class="info"><b>Did you know...</b><br>Alumni of Duke Univeristy have an average credit score of 780. SoFi members have an average credit score of 800.</p>
+
+			</div>
+		</div>
+
+		<div class="action-item">
+			<h3 class="heading">Action items</h3>
+			<div class="action">
+				<div class="circle"></div>
+				<p>Decrease your credit usage</p>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			</div>
+			<div class="action">
+				<div class="circle"></div>
+				<p>Decrease your credit usage</p>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			</div>
+		</div>
 	</div>
 	<div class="col-xs-12 col-md-3">
 		<div class="events">
@@ -260,4 +312,4 @@
 	But lets jump directly to wallet page.<br><br>Click any row to jump to it.
 	{/t}</span>
 </div>
-git 
+

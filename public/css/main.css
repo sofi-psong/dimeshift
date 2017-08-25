@@ -74,7 +74,58 @@
 .points {
 	color: #8a8a8a;
 }
-
+/****credit score ****/
+.credit-score {
+	background-color: #ffffff
+}
+.credit-score-module {
+	padding: 40px 20px 125px 20px;
+}
+.credit-score span {
+	font-size: 16px;
+	color: #F5AF4C;
+	font-weight: bold;
+	margin-left: 15px;
+}
+.info-icon {
+	float: left;
+	height: 15px;
+  margin-top: 5px;
+}
+.info {
+	float: left;
+	font-size: 14px;
+	width: 80%;
+  margin-left: 10px;
+}
+/*action item*/
+.action {
+	background-color: #ffffff;
+	border-bottom: 1px rgba(0,0,0,0.1) solid;
+	clear: both;
+	height: 45px;
+  padding: 13px 20px;
+}
+.circle {
+	background-color: #33C2F6;
+	border-radius: 50%;
+	height: 8px;
+	width: 8px;
+	float: left;
+  position: relative;
+  top: 6px;
+  margin-right: 10px;
+}
+.action p {
+	font-size: 14px;
+	float: left;
+}
+.glyphicon-chevron-right {
+	color: #8a8a8a;
+	float: right;
+  position: relative;
+  top: 5px;
+}
 /****credit utilization ****/
 /*credit impact*/
 .credit-impact-module {
