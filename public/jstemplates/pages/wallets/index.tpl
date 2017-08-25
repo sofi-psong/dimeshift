@@ -333,8 +333,3 @@
 	But lets jump directly to wallet page.<br><br>Click any row to jump to it.
 	{/t}</span>
 </div>
-<<<<<<< HEAD
-git
-=======
-
->>>>>>> de38003144b4150ec125585277d9baba4fe21289
