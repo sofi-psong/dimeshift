@@ -266,41 +266,52 @@
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			</div>
 		</div>
+
+		<div class="credit-calc">
+			<h3 class="heading">How your credit score is calculated</h3>
+			<div class="action">
+				<p>Credit Usage</p>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<p class="action-perc">72%</p>
+				<p class="subtext text-warning">Average</p>
+			</div>
+			<div class="action">
+				<p>Payment History</p>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<p class="action-perc">99%</p>
+				<p class="subtext text-success">Good</p>
+			</div>
+			<div class="action">
+				<p>Open Accounts</p>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<p class="action-perc">10</p>
+				<p class="subtext text-warning">Average</p>
+			</div>
+			<div class="action">
+				<p>Avg age of accounts</p>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<p class="action-perc">4 yrs 11 mos</p>
+				<p class="subtext text-danger">Poor</p>
+			</div>
+			<div class="action">
+				<p>Hard inquiries</p>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<p class="action-perc">0</p>
+				<p class="subtext text-info">Average</p>
+			</div>
+			<div class="action">
+				<p>Derogatory marks</p>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<p class="action-perc">2</p>
+				<p class="subtext text-warning">Average</p>
+			</div>
+		</div>
+
 	</div>
 	<div class="col-xs-12 col-md-3">
 		<div class="events">
 			<h2 class="heading">Recommended Events</h2>
-<!-- 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				  <ol class="carousel-indicators">
-				    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				  </ol>
-				  <div class="carousel-inner" role="listbox">
-				    <div class="carousel-item active">
-				      <img class="d-block img-fluid" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170813101254/G_WP_generic_dinner-11.jpg" alt="First slide">
-				    </div>
-				    <div class="carousel-item">
-				      <img class="d-block img-fluid" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170813101254/G_WP_generic_dinner-11.jpg" alt="Second slide">
-				    </div>
-				    <div class="carousel-item">
-				      <img class="d-block img-fluid" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170813101254/G_WP_generic_dinner-11.jpg" alt="Third slide">
-				    </div>
-				  </div>
-				  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-				  </a>
-				  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-				  </a>
-				</div>
-				<script>
-					$(".carousel").carousel({
-				    interval: false
-				  });
-				</script> -->
+				<img src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825164735/Screen-Shot-2017-08-25-at-4.46.54-PM.png">
 		</div>
 	</div>
 </div>

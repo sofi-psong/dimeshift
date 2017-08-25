@@ -126,6 +126,31 @@
   position: relative;
   top: 5px;
 }
+/*credit calculation*/
+.credit-calc .action {
+  padding: 10px 20px;
+  height: 56px;
+}
+.subtext {
+	clear: both;
+  position: relative;
+  bottom: 5px;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+.credit-calc p {
+	margin-bottom: 0;
+}
+.action-perc {
+	float: right!important;
+  margin-right: 5px;
+  font-size: 12px!important;
+  top: 8px;
+  position: relative;
+}
+.credit-calc .glyphicon{
+	top: 10px;
+}
 /****credit utilization ****/
 /*credit impact*/
 .credit-impact-module {
@@ -236,4 +261,8 @@
 }
 .account .progress {
 	clear: both;
+}
+/*events*/
+.events img {
+	max-width: 100%;
 }
