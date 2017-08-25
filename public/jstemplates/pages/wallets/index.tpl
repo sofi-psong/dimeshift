@@ -51,33 +51,39 @@
 		</div>
 	</div>
 
+	<script>
+	var chart = c3.generate({
+	    data: {
+	        columns: [
+	            ['score', 7.4]
+	        ],
+	        type: 'gauge',
+	        onclick: function (d, i) { console.log("onclick", d, i); },
+	        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+	        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+	    },
+	    gauge: {
+				width: 14,
+				min: 0,
+				max: 10,
+				label: {
+    		format: function (value, ratio) {
+      	return value + '!';
+    	}
+  }
+	    },
+	    color: {
+	        pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+	        threshold: {
+	            values: [0.3, 0.6, 0.9, 1.0]
+	        }
+	    },
+	    size: {
+	        height: 180
+	    }
+	});
+	</script>
 
-
-
-<script>
-var chart = c3.generate({
-    data: {
-        columns: [
-            ['data', 91.4]
-        ],
-        type: 'gauge',
-        onclick: function (d, i) { console.log("onclick", d, i); },
-        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-    },
-    gauge: {
-    },
-    color: {
-        pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
-        threshold: {
-            values: [30, 60, 90, 100]
-        }
-    },
-    size: {
-        height: 180
-    }
-});
-</script>
 
 
 
@@ -122,3 +128,4 @@ var chart = c3.generate({
 	But lets jump directly to wallet page.<br><br>Click any row to jump to it.
 	{/t}</span>
 </div>
+git 
