@@ -1,1 +1,18 @@
-
+/*nav bar*/
+.navbar-header {
+	background-color: #117DB0;
+}
+.btn-logo, a.btn-logo:active {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+.sofi-logo {
+	height: 22px;
+  position: relative;
+  bottom: 4px;
+}
+
+
+
+

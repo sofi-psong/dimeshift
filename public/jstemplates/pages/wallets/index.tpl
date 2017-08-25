@@ -1,13 +1,7 @@
-<ul class="breadcrumb">
-  <li><a href="{$settings->site_path}">{tp}Home{/tp}</a></li>
-  <li class="active">{tp}Your Wallets{/tp}</li>
-</ul>
-
-
 <div class="row">
 <div class="col-xs-12 col-md-9">
 
-	{if $items|count == 0}
+<!-- 	{if $items|count == 0}
 		{if $status|default:'active' == 'active'}
 			{if $origin|default:'mine' == 'shared'}
 			<div class="alert alert-warning" role="alert">{tp}You don't have access to other users' wallets{/tp}</div>	
@@ -50,7 +44,19 @@
 			<div class="list-group-item list-group-item-info"><a href="{$settings->site_path}/wallets/add" class="btn btn-primary" id="add_wallet_button">{tp}Add{/tp}</a></div>
 		{/if}
 		</div>	
-	{/if}
+	{/if} -->
+	<div class="home-module">
+		<h2 class="heading">What's affecting your score</h2>
+		<div class="">
+			<h3>Credit Score</h3>
+			<div class="progress">
+			  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+			  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+			    <span class="sr-only">70% Complete</span>
+			  </div>
+			</div>
+		</div>
+	</div>
 
 </div>
 <div class="col-xs-12 col-md-3">
