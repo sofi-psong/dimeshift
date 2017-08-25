@@ -26,12 +26,13 @@ var startServer = function(options, callback) {
 		return true;
 	});
 	db.Sequelize.Promise.onPossiblyUnhandledRejection(function(reason) {
+		console.log('reason', reason);
 		throw reason;
 	});
 	server.use(CookieParser.parse);
 	server.use(restify.queryParser());
 	server.use(restify.bodyParser());
-
+	// console.log('herer');
 	// API routes
 	routes(function(routes) {
 		routes.forEach(function(route) {
@@ -60,12 +61,16 @@ var startServer = function(options, callback) {
 			indexDirectory: options.indexDirectory
 		}));
 	}
-
+	console.log('sync');
 	// Sync db and start server
 	db.sequelize.sync()
 		.then(function(err) {
+			// console.log('err', err);
+
 			var port = config.port || process.env.PORT || 8080;
+			// port = 5123;
 			var doStart = function(selectedPort) {
+				console.log('selectedProt', selectedPort);
 				server.listen(selectedPort);
 				console.log("Server started: http://localhost:" + selectedPort + "/");
 				if (typeof(callback) === 'function')
