@@ -1,18 +1,41 @@
 /*nav bar*/
-.navbar-header {
-	background-color: #117DB0;
+.navbar {
+	background-color: #117DB0!important;
 }
 .btn-logo, a.btn-logo:active {
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
+.btn-info.active, .btn-info:hover {
+  background-color: transparent;
+}
+.navbar-collapse {
+	background-color: #ffffff;
+}
+.navbar-toggle, .navbar-toggle:hover {
+  background-color: transparent!important;
+  border: none;
+  margin: 0!important;
+}
+.navbar-icon {
+  height: 25px;
+  width: 25px;
+  position: relative;
+}
 .sofi-logo {
 	height: 22px;
   position: relative;
   bottom: 4px;
 }
-
+@media (min-width:768px){
+	.navbar-collapse {
+		background-color: transparent;
+	}	
+	li a{
+		color: #ffffff!important;
+	}
+}
 /*reason module*/
 .heading {
   text-transform: uppercase;
@@ -24,8 +47,15 @@
   background-color: #ffffff;
   padding: 20px;
   margin-bottom: 10px;
-  height: 160px;
+  height: 140px;
   border-radius: 7px;
+  position: relative;
+}
+.notification-icon {
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  width: 15px;
 }
 .reason-heading {
 	font-size: 17px;
@@ -39,9 +69,120 @@
 }
 .progress {
 	margin-bottom: 5px;
+	height: 5px;
 }
 .points {
 	color: #8a8a8a;
 }
 
+/****credit utilization ****/
+/*credit impact*/
+.credit-impact-module {
+	background-color: #ffffff;
+	padding: 20px;
+}
+.credit-impact h1 {
+	text-align: center;
+	margin: 0;
+}
+.credit-impact p {
+	font-size: 14px;
+	color: #8a8a8a;
+	text-align: center;
+}
+.impact-bucket {
+	display: inline-block;
+	width: 24%;
+  height: 35px;
+  border-radius: 3px;
+  padding-top: 10px;
+  text-align: center;
+}
+.impact-description {
+	width: 24%;
+	color: #8a8a8a;
+	display: inline-block;
+}
+.bg-danger {
+	background-color: #D93C18;
+}
+.bg-warning {
+	background-color: #ffffff;
+	border: 1px solid #F3A537;
+}
+.bg-success {
+	background-color: #ffffff;
+	border: 1px solid #80D135;
+}
+.bg-info {
+	background-color: #ffffff;
+	border: 1px solid #3EC2F4;
+}
+.text-white {
+	color: #ffffff;
+}
+/*improve score module*/
+.improve-score-module {
+	background-color: #ffffff;
+	padding: 20px 15px;
+}
+.improve-score-module p {
+	font-size: 14px;
+}
+.improve-score-module .btn {
+	width: 100%;
+}
 
+/*credit accounts module*/
+.credit-account-module {
+	background-color: #ffffff;
+	padding: 5px 0;
+  clear: both;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+	right: 5px;
+	position: relative;
+}
+.credit-account-module .credit-usage {
+	border-bottom: 1px rgba(0,0,0,0.1) solid;
+}
+.credit-account-module .credit-usage div{
+	width: 49%;
+	display: inline-block;
+	text-align: center;
+}
+.credit-account-module .credit-usage h4{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+.credit-account-module .credit-usage p{
+	color: #8a8a8a;
+	font-size: 13px;
+}
+.account {
+	  margin: 20px;
+	  border-bottom: 1px rgba(0,0,0,.1) solid;
+	  padding-bottom: 30px;
+}
+.account .bank {
+	float: left;
+	font-weight: bold;
+	font-size: 14px;
+}
+.account .perc {
+	float: right;
+	font-size: 14px;
+}
+.account .balance {
+	font-weight: normal;
+	font-size: 12px;
+	opacity: 0.4;
+}
+.account .progress {
+	clear: both;
+}
