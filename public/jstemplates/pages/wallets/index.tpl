@@ -1,39 +1,60 @@
 <div class="row">
-	<div class="col-xs-12 col-md-9">
+	<div class="col-xs-12 col-md-9" style="background-color:white;">
+		<div>
+			<div id="chart"></div>
+			<script>
+			// alert('a');
+			var chart = c3.generate({
+			    data: {
+			        columns: [
+			            ['score', 0]
+			        ],
+			        type: 'gauge',
+			        onclick: function (d, i) { console.log("onclick", d, i); },
+			        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+			        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+			    },
+			    gauge: {
+						width: 14,
+						min: 0,
+						max: 10,
+						label: {
+		    			format: function (value, ratio) {
+		      			return value;
+		    			}
+		  			}
+			    },
+			    color: {
+			        pattern: ['#FF0000', '#F97600', '#F6C600', '#15c0f1'], // the three color levels for the percentage values.
+			        threshold: {
+			            values: [0.3, 0.6, 0.9, 1.0]
+			        }
+			    },
+			    size: {
+			        height: 180
+			    }
+			});
 
-		<div id="chart"></div>
-		<script>
-		var chart = c3.generate({
-		    data: {
-		        columns: [
-		            ['score', 6.2]
-		        ],
-		        type: 'gauge',
-		        onclick: function (d, i) { console.log("onclick", d, i); },
-		        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-		        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-		    },
-		    gauge: {
-					width: 14,
-					min: 0,
-					max: 10,
-					label: {
-	    		format: function (value, ratio) {
-	      	return value;
-	    	}
-	  }
-		    },
-		    color: {
-		        pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
-		        threshold: {
-		            values: [0.3, 0.6, 0.9, 1.0]
-		        }
-		    },
-		    size: {
-		        height: 180
-		    }
-		});
-		</script>
+			setTimeout(function () {
+			    chart.load({
+			        columns: [['score', 6.2]]
+			    });
+					$('.c3-gauge-value').css("font-size","55pt");
+					$('.c3-gauge-value').css("letter-spacing","-2pt");
+			}, 100);
+
+
+
+				d3.select('.c3-gauge-value').attr('dy', -20)
+			</script>
+			<div class="health-score-container">
+				<h1 style="text-align:center; line-height: 7pt; color: rgb(26,123,179);font-size:20px;">FINANCIAL HEALTH SCORE</h1>
+				<h2 style="text-align:center; font-size:14px; color: grey; letter-spacing:0pt; margin-top:14px;">8.5 or higher needed to qualify</h2>
+			</div>
+			<br><br>
+		</div>
+</div>
+	<div class="col-xs-12 col-md-9">
 		<div class="reason">
 			<h2 class="heading">What's affecting your score</h2>
 
@@ -220,7 +241,7 @@
 				<h1>715<span>Average</span></h1>
 				<div id="chart2"></div>
 
-				<script>			
+				<script>
 				var chart2 = c3.generate({
 						bindto: '#chart2',
 						data: {
@@ -323,4 +344,3 @@
 	But lets jump directly to wallet page.<br><br>Click any row to jump to it.
 	{/t}</span>
 </div>
-
