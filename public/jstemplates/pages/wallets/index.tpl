@@ -252,7 +252,7 @@
 						        ]
 						    },
 								size: {
-  width: 445
+  width: 350
 },
 						    axis: {
 						        x: {
@@ -286,7 +286,7 @@
 			</div>
 			<div class="action to3">
 				<div class="circle"></div>
-				<p>Decrease your credit usage</p>
+				<p>Check fraudulent credit</p>
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			</div>
 		</div>
