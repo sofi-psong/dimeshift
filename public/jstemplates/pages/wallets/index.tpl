@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-xs-12 col-md-9" style="background-color:white;">
+	<div  id="first" class="col-xs-12 col-md-9">
 		<div>
 			<div id="chart"></div>
 			<script>
@@ -53,12 +53,9 @@
 			</div>
 			<br><br>
 		</div>
-</div>
-	<div class="col-xs-12 col-md-9">
 		<div class="reason">
 			<h2 class="heading">What's affecting your score</h2>
-
-			<a href="" class="reason-module">
+			<a href="#" id="to2" class="reason-module">
 				<img class="notification-icon" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825113319/circle-3.png" alt="income">
 				<img class="reason-icon" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825112936/icon-credit-card-blue-1.png" alt="income">
 				<h3 class="reason-heading">Credit Score</h3>
@@ -106,7 +103,9 @@
 				<p class="points">6 out of 10 points</p>
 			</a>
 		</div>
+	</div>
 
+	<div class="col-xs-12 col-md-9" id="third" style="display:none;">
 		<div class="credit-impact">
 			<div class="credit-impact-module">
 				<h1>72%</h1>
@@ -127,7 +126,7 @@
 			<div class="improve-score-module">
 				<p><b>Getting your usage down to 29% will raise your SoFi score by 2.5.</b></p>
 				<p>We can help you create a viable payment plan to pay the difference of $2802 on your own timeline.</p>
-				<button class="btn btn-primary">Start goal</button>
+				<button class="btn btn-primary" id="make-it-rain">Start goal</button>
 			</div>
 		</div>
 
@@ -235,7 +234,8 @@
 				</div>
 			</div>
 		</div>
-
+	</div>
+	<div class="col-xs-12 col-md-9" id="second" style="display:none;">
 		<div class="credit-score">
 			<div class="credit-score-module">
 				<h1>715<span>Average</span></h1>
@@ -251,6 +251,9 @@
 						            ['Credit Score', 708, 708, 718, 718]
 						        ]
 						    },
+								size: {
+  width: 445
+},
 						    axis: {
 						        x: {
 						            type: 'timeseries',
@@ -276,63 +279,25 @@
 
 		<div class="action-item">
 			<h3 class="heading">Action items</h3>
-			<div class="action">
+			<div class="action to3">
 				<div class="circle"></div>
 				<p>Decrease your credit usage</p>
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			</div>
-			<div class="action">
+			<div class="action to3">
 				<div class="circle"></div>
 				<p>Decrease your credit usage</p>
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			</div>
 		</div>
-
-		<div class="credit-calc">
-			<h3 class="heading">How your credit score is calculated</h3>
-			<div class="action">
-				<p>Credit Usage</p>
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<p class="action-perc">72%</p>
-				<p class="subtext text-warning">Average</p>
-			</div>
-			<div class="action">
-				<p>Payment History</p>
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<p class="action-perc">99%</p>
-				<p class="subtext text-success">Good</p>
-			</div>
-			<div class="action">
-				<p>Open Accounts</p>
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<p class="action-perc">10</p>
-				<p class="subtext text-warning">Average</p>
-			</div>
-			<div class="action">
-				<p>Avg age of accounts</p>
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<p class="action-perc">4 yrs 11 mos</p>
-				<p class="subtext text-danger">Poor</p>
-			</div>
-			<div class="action">
-				<p>Hard inquiries</p>
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<p class="action-perc">0</p>
-				<p class="subtext text-info">Average</p>
-			</div>
-			<div class="action">
-				<p>Derogatory marks</p>
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<p class="action-perc">2</p>
-				<p class="subtext text-warning">Average</p>
-			</div>
-		</div>
-
 	</div>
+</div>
+
+<div>
 	<div class="col-xs-12 col-md-3">
 		<div class="events">
 			<h2 class="heading">Recommended Events</h2>
-				<img src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825164735/Screen-Shot-2017-08-25-at-4.46.54-PM.png">
+			<img src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825164735/Screen-Shot-2017-08-25-at-4.46.54-PM.png">
 		</div>
 	</div>
 </div>
@@ -344,3 +309,21 @@
 	But lets jump directly to wallet page.<br><br>Click any row to jump to it.
 	{/t}</span>
 </div>
+
+
+
+<script>
+	$('#to2').click(function() {
+		console.log('clicked');
+		$('#first').hide();
+		$('#second').show();
+	});
+	$('.to3').click(function() {
+		$('#second').hide();
+		$('#third').show();
+
+	});
+	$('#make-it-rain"').click(function() {
+		console.log('start');
+	})
+</script>
