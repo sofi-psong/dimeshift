@@ -564,7 +564,9 @@ interval(draw, 15)
 			$('#fourth').show();
 			$('#third').hide();
 
-			$('.navbar-toggle').click();
+			setTimeout(function() {
+				$('.navbar-toggle').click();
+			}, 1000)
 	});
 
 	// $('#fourth')
