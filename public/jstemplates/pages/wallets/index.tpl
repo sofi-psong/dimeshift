@@ -315,9 +315,225 @@
 </div>
 
 
+<div class="dossier"></div>
+
+<script>
+var papers = [];
+
+function Paper() {
+
+  this.type = 'paper'
+  this.dossier = document.querySelector('.dossier')
+  this.w = 20
+  this.h = 30
+  this.x
+  this.y
+  this.scale
+  this.speed
+  this.node
+  this.shadow
+
+  this.getScale = function(min, max) {
+    this.scale = Math.random() * (max - min) + min
+  }
+
+  this.getPosition = function() {
+    var w = parseFloat( window.getComputedStyle( this.dossier ).width )
+    var h = parseFloat( window.getComputedStyle( this.dossier ).height )
+    minX = 0 - ( this.w * this.scale / 2 )
+    maxX = w + ( this.w * this.scale / 2 )
+    minY = 0 - ( this.h * this.scale / 2 ) - h
+    maxY = 0 - ( this.h * this.scale / 2 )
+    this.x = Math.random() * (maxX - minX) + minX
+    this.y = Math.random() * (maxY - minY) + minY
+  }
+
+  this.getSpeed = function() {
+    this.speed = this.scale
+  }
+
+  this.createNode = function() {
+    var paper
+    paper = document.createElement('div')
+    paper.classList.add(this.type)
+    paper.style.left = this.x + 'px'
+    paper.style.top = this.y + 'px'
+    this.dossier.appendChild(paper)
+    this.node = paper
+    this.createLines()
+    this.createShadow()
+    this.updateNode()
+  }
+
+  this.updateNode = function() {
+    this.setHighlight()
+    this.node.style.zIndex          = parseInt( this.scale * 100 )
+    this.node.style.webkitTransform = 'scale(' + this.scale + ')' +'rotate(' + Math.random() * 90 + 'deg)';
+    this.node.style.MozTransform    = 'scale(' + this.scale + ')'
+    +'rotate(' + Math.random() * 90 + 'deg)';
+    this.node.style.msTransform     = 'scale(' + this.scale + ')'
+    +'rotate(' + Math.random() * 90 + 'deg)';
+    this.node.style.OTransform      = 'scale(' + this.scale + ')'
+    +'rotate(' + Math.random() * 90 + 'deg)';
+    this.node.style.transform       = 'scale(' + this.scale + ')'
+    +'rotate(' + Math.random() * 90 + 'deg)';
+    this.node.style.marginLeft      = - this.w * this.scale / 2 + 'px'
+    this.node.style.marginTop       = - this.h * this.scale / 2 + 'px'
+    this.node.style.left            = this.x + 'px'
+    //this.node.style.
+    this.shadow.style.opacity       = 1 - mapRange( this.scale, .5, 4, 0, 1 )
+  }
+
+  this.createLines = function() {
+    for (var i = 0; i < 5; i++) {
+      var line
+      line = document.createElement('div')
+      line.classList.add('line')
+      this.node.appendChild(line)
+    }
+  }
+
+  this.createShadow = function() {
+    var shadow
+    shadow = document.createElement('div')
+    shadow.classList.add('shadow')
+    this.node.appendChild(shadow)
+    this.shadow = shadow
+  }
+
+  this.setHighlight = function() {
+    var index = randomInt( 0, 4 );
+    var lines = this.node.querySelectorAll( '.line' );
+    for (var i = 0; i < lines.length; i++) {
+      lines[ i ].classList.remove( 'highlight' )
+    }
+    lines[ index ].classList.add( 'highlight' )
+  }
+
+  this.isGone = function() {
+    var h = parseFloat( window.getComputedStyle( this.dossier ).height )
+    if (this.y - (this.h * this.scale ) > h) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  this.animate = function() {
+    this.y += this.speed
+    this.node.style.top = this.y + 'px'
+    if (this.isGone()) {
+      this.reset()
+    }
+  }
+
+  this.reset = function() {
+    this.getPosition()
+    this.getSpeed()
+    this.updateNode()
+  }
+
+  this.getScale(0.5, 4)
+  this.getPosition()
+  this.getSpeed()
+  this.createNode()
+  this.animate()
+
+}
+
+function setup() {
+  for (var i = 0; i < 120; i++) {
+    papers.push(new Paper())
+  }
+}
+
+function draw() {
+  papers.forEach(function(paper) {
+    paper.animate()
+  })
+}
+
+/* helpers */
+
+function interval(callback, delay) {
+  var dateNow = Date.now,
+    requestAnimation = window.requestAnimationFrame,
+    start = dateNow(),
+    stop,
+    intervalFunc = function() {
+      dateNow() - start < delay || (start += delay, callback());
+      stop || requestAnimation(intervalFunc)
+    }
+  requestAnimation(intervalFunc);
+  return {
+    clear: function() {
+      stop = 1
+    }
+  }
+}
+
+function randomInt(min,max) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+function mapRange(value, low1, high1, low2, high2) {
+    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+}
+
+/* end helpers */
+
+setup()
+interval(draw, 15)
+</script>
+<style>
+
+.dossier {
+	/*display:none !important;*/
+  background: rgba(0,0,0,0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  opacity: 0;
+	z-index:-1;
+}
+
+.paper {
+  position: absolute;
+  width: 3rem;
+  height: 1.5rem;
+  background: url(https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170824145258/sofi-money.png);
+  background-size: 100%;
+  box-sizing: border-box;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  background: #001B29;
+}
+
+</style>
+
 <script>
 	$('#to2').click(function() {
-		console.log('clicked');
 		$('#first').hide();
 		$('#second').show();
 	});
@@ -326,7 +542,24 @@
 		$('#third').show();
 
 	});
-	$('#make-it-rain"').click(function() {
-		console.log('start');
+	showing = false;
+	$('.navbar-toggle').click(function() {
+		if (!showing) {
+			$('.dossier').css('opacity', 1);
+			$('.dossier').css('z-index', 99);
+			showing = true;
+		} else {
+			$('.dossier').css('opacity', 0);
+			$('.dossier').css('z-index', -1);
+
+			showing=false;
+
+		}
+		// if (notShown) {
+		// 	$('.dossier').css('opacity', 1);
+		// } else {
+		// 	$('.dossier').css('opacity', 0);
+		// 	!notShown;
+		// }
 	})
 </script>
