@@ -126,7 +126,7 @@
 			<div class="improve-score-module">
 				<p><b>Getting your usage down to 29% will raise your SoFi score by 2.5.</b></p>
 				<p>We can help you create a viable payment plan to pay the difference of $2802 on your own timeline.</p>
-				<button class="btn btn-primary" id="make-it-rain">Start goal</button>
+				<button class="btn btn-primary" id="start-goal">Start goal</button>
 			</div>
 		</div>
 
@@ -310,8 +310,9 @@
 	{/t}</span>
 </div>
 
-<div class="col-xs-12 col-md-3" id="fourth">
 
+<div id="fourth">
+	<img id="fourth-image" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20170825171918/Screen-Shot-2017-08-25-at-5.18.23-PM-1.png">
 </div>
 
 
@@ -442,7 +443,7 @@ function Paper() {
 }
 
 function setup() {
-  for (var i = 0; i < 120; i++) {
+  for (var i = 0; i < 80; i++) {
     papers.push(new Paper())
   }
 }
@@ -487,6 +488,20 @@ interval(draw, 15)
 </script>
 <style>
 
+#fourth{
+	background-color:red;
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	z-index:98;
+	display:none;
+}
+#fourth-image {
+	display:block;
+ 	width:100%; height:100%;
+ 	background-size: cover;
+}
 .dossier {
 	/*display:none !important;*/
   background: rgba(0,0,0,0);
@@ -534,14 +549,25 @@ interval(draw, 15)
 
 <script>
 	$('#to2').click(function() {
+		window.scrollTo(0, 0);
 		$('#first').hide();
 		$('#second').show();
 	});
 	$('.to3').click(function() {
+		window.scrollTo(0, 0);
 		$('#second').hide();
 		$('#third').show();
-
 	});
+
+	$('#start-goal').click(function() {
+			window.scrollTo(0, 0);
+			$('#fourth').show();
+			$('#third').hide();
+
+			$('.navbar-toggle').click();
+	});
+
+	// $('#fourth')
 	showing = false;
 	$('.navbar-toggle').click(function() {
 		if (!showing) {
@@ -553,7 +579,6 @@ interval(draw, 15)
 			$('.dossier').css('z-index', -1);
 
 			showing=false;
-
 		}
 		// if (notShown) {
 		// 	$('.dossier').css('opacity', 1);
