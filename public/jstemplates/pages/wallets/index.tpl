@@ -484,7 +484,7 @@ function mapRange(value, low1, high1, low2, high2) {
 /* end helpers */
 
 setup()
-interval(draw, 15)
+
 </script>
 <style>
 
@@ -563,10 +563,11 @@ interval(draw, 15)
 			window.scrollTo(0, 0);
 			$('#fourth').show();
 			$('#third').hide();
-
-			setTimeout(function() {
-				$('.navbar-toggle').click();
-			}, 1000)
+			interval(draw, 15);
+			$('.navbar-toggle').click();
+			// setTimeout(function() {
+			//
+			// }, 1000)
 	});
 
 	// $('#fourth')
@@ -582,11 +583,5 @@ interval(draw, 15)
 
 			showing=false;
 		}
-		// if (notShown) {
-		// 	$('.dossier').css('opacity', 1);
-		// } else {
-		// 	$('.dossier').css('opacity', 0);
-		// 	!notShown;
-		// }
 	})
 </script>
